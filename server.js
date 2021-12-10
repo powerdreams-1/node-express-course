@@ -18,6 +18,23 @@ res.json ({
 succsess :true,
 message :'i got one user',
 user : req.params.id
+app.post ('/login ', function (req,res){
+const username=req.body.username 9
+const password=req.body.password ;
+const mockUsername="billyTheKid";
+const mockpassword="superSecret ";
+if(username===mockUsername && pasword===mockpassword ){
+res.json({
+success:true
+message:'pasword and username match !',
+token:'encrypted token goes here'
+})
+}else{
+res.json({
+success:false,
+message:'password and username do not match'
+})
+}
 })
 app.listen (8000,function ( ){
 console.log("server is listening")
